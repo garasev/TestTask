@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  balancer:
+    image: balancer
+    container_name: Balancer
+    build: .
+    restart: on-failure
+    env_file:
+      ./config/config.env
+    ports:
+      - "8090:8090"
+    networks:
+      - proxynet
+
+networks:
+  proxynet:
+    name: proxynet

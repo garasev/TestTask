@@ -1,0 +1,67 @@
+version: '3.4'
+
+services:
+  web1:
+    image: web
+    container_name: Web1
+    build: .
+    restart: on-failure
+    env_file:
+      ./config/config.env
+    ports:
+      - "8081:8080"
+    networks:
+      - proxynet
+
+  
+  web2:
+    image: web
+    container_name: Web2
+    build: .
+    restart: on-failure
+    env_file:
+      ./config/config.env
+    ports:
+      - "8082:8080"
+    networks:
+      - proxynet
+
+  web3:
+    image: web
+    container_name: Web3
+    build: .
+    restart: on-failure
+    env_file:
+      ./config/config.env
+    ports:
+      - "8083:8080"
+    networks:
+      - proxynet
+
+  web4:
+    image: web
+    container_name: Web4
+    build: .
+    restart: on-failure
+    env_file:
+      ./config/config.env
+    ports:
+      - "8084:8080"
+    networks:
+      - proxynet
+
+  web5:
+    image: web
+    container_name: Web5
+    build: .
+    restart: on-failure
+    env_file:
+      ./config/config.env
+    ports:
+      - "8085:8080"
+    networks:
+      - proxynet
+
+networks:
+  proxynet:
+    external: true
