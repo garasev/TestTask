@@ -24,8 +24,3 @@ func (h *Handler) Info(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) Ping(w http.ResponseWriter, r *http.Request) {
 	//h.logger.Debug("Pong!")
 }
-
-func (h *Handler) Crash(w http.ResponseWriter, r *http.Request) {
-	h.logger.Info("Crash server.")
-	os.Exit(1)
-}
